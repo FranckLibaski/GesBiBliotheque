@@ -1,0 +1,7 @@
+{
+  "name": "GesBiBlio",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title >
+            GesBiblio
+        </ion-title>
+      <ion-buttons start (click)="menuShow()">
+        <button ion-button >
+        <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <button (click)="showDetail(article)" ion-item *ngFor="let article of Articles">
+        <ion-thumbnail item-start>
+          <img [src]="article.image[1]" height="50" width="50">
+        </ion-thumbnail>
+        <h2>{{article.titre}}</h2>
+        <h2>{{article.auteur | uppercase}}</h2>
+        <p>{{article.genre}}</p>
+        <p>
+          <span *ngIf="article.status >= 1">
+            <ion-icon class="iconYelloy" name="star"></ion-icon>
+          </span>
+          <span *ngIf="article.status >= 2">
+            <ion-icon class="iconYelloy" name="star"></ion-icon>
+          </span>
+          <span *ngIf="article.status >= 3">
+            <ion-icon class="iconYelloy" name="star"></ion-icon>
+          </span>
+          <span *ngIf="article.status >= 4">
+            <ion-icon class="iconYelloy" name="star"></ion-icon>
+          </span>
+          <span *ngIf="article.status >= 5">
+            <ion-icon class="iconYelloy" name="star"></ion-icon>
+          </span>
+        </p>
+      </button>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer class="foo">
+  <ion-row>
+    <ion-col offset-1 col-10>
+      <button ion-button round large>
+        <ion-icon name="camera"></ion-icon>&nbsp;
+        Ajouter un livre
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
